@@ -1,0 +1,15 @@
+<div class="slide-products">
+    <div class="swiper-container" id="castSlideshow">
+        <div class="swiper-wrapper">
+            <div *ngFor="let product of products" class="swiper-slide">
+                <img class="cast-slideshow-item__img" [src]="product.Image" [alt]="product.CategoryId" />
+                <div class="product-description">
+                    <h3 class="text-3xl">{{ product.Name }}</h3>
+                    <p>{{ product.Description | slice: 0:130 }}...</p>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</div>

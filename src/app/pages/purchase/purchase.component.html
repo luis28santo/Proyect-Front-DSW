@@ -1,0 +1,37 @@
+<div class="purchase-container">
+    <h2>Mis Productos</h2>
+    <hr />
+    <div class="content-products">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody class="table-filas" *ngIf="myProducts.length">
+                <tr *ngFor="let product of myProducts">
+                    <th scope="row">{{ product.Product.ProductId }}</th>
+                    <td><img width="60" [src]="product.Product.Image" [alt]="product.Product.ProductId" /></td>
+                    <td>{{ product.Product.Name }}</td>
+                    <td>{{ product.Quantity }}</td>
+                    <td>S/. {{ product.Product.Price }}</td>
+                    <td><button (click)="onDeleteProduct(product)" class="btn btn-outline-danger">Eliminar</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div *ngIf="myProducts.length" class="purchase-products">
+            <h3 for="pucharse">Total a Pagar</h3>
+            <p id="total">S/.</p>
+        </div>
+        <div class="content-buttons mt-5">
+            <button (click)="onBack()" class="btn btn-outline-info">Regresar</button>
+            <button *ngIf="myProducts.length" (click)="onPucharse()" class="btn btn-outline-primary ms-3">Pagar</button>
+        </div>
+    </div>
+</div>

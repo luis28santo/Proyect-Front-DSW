@@ -1,0 +1,13 @@
+<div class="navbar-container">
+    <div class="navbar-content">
+        <a class="navbar-content__title items" href="#">Ecomerce Beta</a>
+        <div *ngIf="client" class="content-cart">
+            <i (click)="navigatePurchase()" class="fas fa-shopping-cart items"></i>
+            <button class="btn btn-outline-danger ms-3" (click)="signOff()">Cerrar Sesion</button>
+        </div>
+        <div *ngIf="!client" class="tabs">
+            <button class="btn" [class.btn-outline-danger]="showForm" (click)="onShowForm(true)">Iniciar Sesion</button>
+            <button class="btn" [class.btn-outline-danger]="!showForm" (click)="onShowForm(false)">Crear Cuenta</button>
+        </div>
+    </div>
+</div>

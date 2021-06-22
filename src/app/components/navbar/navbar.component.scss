@@ -1,0 +1,39 @@
+.navbar-container {
+    width: 100%;
+    background-color: rgba(218, 218, 218, 0.8);
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    .navbar-content {
+        width: 90%;
+        margin: auto;
+        padding: 1.5% 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.6rem;
+        .navbar-content__title {
+            font-size: 2rem;
+            text-decoration: none;
+            color: white;
+            font-weight: 700;
+        }
+        .items {
+            color: black;
+            cursor: pointer;
+        }
+        .tabs {
+            display: flex;
+            justify-content: space-between;
+        }
+        .content-cart {
+            display: flex;
+            align-items: center;
+            i {
+                font-size: 1.8rem;
+                color: #dc3545;
+            }
+        }
+    }
+}

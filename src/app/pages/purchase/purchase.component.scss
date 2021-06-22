@@ -1,0 +1,32 @@
+.purchase-container {
+    width: 100%;
+    .content-products {
+        width: 100%;
+        table {
+            .table-filas {
+                tr {
+                    // display: flex;
+                    align-items: center;
+                }
+            }
+        }
+        .purchase-products {
+            width: 95%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 2rem auto;
+            p {
+                margin: 0;
+            }
+        }
+        .content-buttons {
+            width: 100%;
+            display: flex;
+            button {
+                width: 100px;
+                font-size: 1.2rem;
+            }
+        }
+    }
+}

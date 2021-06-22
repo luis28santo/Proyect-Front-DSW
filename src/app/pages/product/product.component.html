@@ -1,0 +1,21 @@
+<div *ngIf="product" class="product-container animate__animated animate__fadeIn">
+    <div class="product-content-img">
+        <img class="img-thumbnail" [src]="product.Image" [alt]="product.ProductId" />
+    </div>
+    <div class="detail-product">
+        <h3>{{ product.Name }}.</h3>
+        <p>{{ product.Description }}</p>
+        <div class="detail-product__price_stock">
+            <p class="text-danger">Stock: {{ product.Stock }}</p>
+            <p class="text-primary">S/. {{ product.Price }}</p>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 col-form-label" for="cantidad">Cantidad</label>
+            <input id="quantity" class="form-control" type="number" name="cantidad" />
+        </div>
+        <div class="button-content mt-5">
+            <button class="btn btn-outline-danger" (click)="onBack()">Regresar</button>
+            <button class="btn btn-outline-success" (click)="addProduct()">Agregar al Carrito</button>
+        </div>
+    </div>
+</div>

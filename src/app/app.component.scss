@@ -1,0 +1,18 @@
+.component-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .background {
+        // background: url('https://www.ecommerceacademy.pe/wp-content/uploads/2017/07/ecommerce-8.jpg');
+        // background: url('https://ats.services/wp-content/uploads/2021/01/comercio-electronico-tejas-software-ats.jpg');
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    .content-pages {
+        margin-top: 120px;
+    }
+}

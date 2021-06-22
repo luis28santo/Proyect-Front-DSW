@@ -1,0 +1,25 @@
+<div class="list-products mt-4 mb-4">
+    <div *ngIf="categories.length" class="categories-container mb-4">
+        <a class="btn" [class.btn-outline-danger]="activeCategory === 'todos'" (click)="allProducts()">Todos</a>
+        <a class="btn" *ngFor="let category of categories" [class.btn-outline-danger]="activeCategory === category.Name" (click)="filterProducts(category)">{{ category.Name }}</a
+		>
+	</div>
+
+	<div *ngIf="listProducts.length" class="products-container animate__animated animate__fadeIn">
+		<div class="row row-cols-1 row-cols-md-3 g-4">
+			<div *ngFor="let product of listProducts" class="col">
+				<div class="card h-100">
+					<img [src]="product.Image" class="card-img-top" [alt]="product.CategoryId" />
+					<div class="card-body">
+						<h5 class="card-title">{{ product.Name }}</h5>
+						<p class="card-text text-danger">S/. {{ product.Price }}</p>
+					</div>
+					<div>
+						<button class="btn text-primary" (click)="showMore(product)
+						">Ver mas...</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,41 @@
+.product-container {
+    width: 100%;
+    padding-top: 5%;
+    display: flex;
+    .product-content-img {
+        width: 50%;
+        padding-right: 2%;
+        img {
+            width: 100%;
+        }
+    }
+    .detail-product {
+        width: 50%;
+        padding-left: 2%;
+        h3 {
+            font-size: 2.1rem;
+            margin-bottom: 5%;
+        }
+        p {
+            font-size: 1.2rem;
+        }
+        &__price_stock {
+            width: 100%;
+            margin-top: 10%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            .form-control {
+                width: 50% !important;
+            }
+        }
+        .button-content {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
