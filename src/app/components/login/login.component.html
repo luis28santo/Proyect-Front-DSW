@@ -1,5 +1,6 @@
 <div class="login-container mt-5">
-    <form *ngIf="showForm && formLogin" [formGroup]="formLogin" class="form-login">
+
+    <form *ngIf="!showForm && formLogin" [formGroup]="formLogin" class="form-login">
         <div class="mb-3">
             <label for="correo" class="form-label">Ingrese Correo</label>
             <input type="email" formControlName="Email" class="form-control" [class.is-invalid]="invalidLogin('Email')" />
@@ -11,7 +12,7 @@
         <button type="button" (click)="onLogin()" class="btn btn-danger">INGRESAR</button>
     </form>
 
-    <form *ngIf="!showForm && formCreateClient" [formGroup]="formCreateClient" class="form-register">
+    <form *ngIf="showForm && formCreateClient" [formGroup]="formCreateClient" class="form-register">
         <div class="mb-3">
             <label for="nombre" class="form-label">Nombre</label>
             <input type="text" formControlName="FirstName" class="form-control" [class.is-invalid]="invalidCreateCliente('FirstName')" />
@@ -30,4 +31,5 @@
         </div>
         <button type="button" (click)="onCreateClient()" class="btn btn-danger">REGISTRAR</button>
     </form>
+
 </div>

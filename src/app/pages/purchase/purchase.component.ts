@@ -73,10 +73,7 @@ export class PurchaseComponent implements OnInit {
 			}
 		});
 		localStorage.setItem('cart', JSON.stringify(this.myProducts));
-
-		setTimeout(() => {
-			console.log(product);
-		}, 500);
+		this.loadTotal(this.myProducts);
 	}
 
 	onBack() {

@@ -38,8 +38,9 @@ export class ProductComponent implements OnInit {
 		let quantity: HTMLInputElement = <HTMLInputElement>document.getElementById('quantity');
 		let pedido: any = {};
 
-		if (quantity.value) {
+		if (Number(quantity.value) > 0 && Number(quantity.value) <= this.product.Stock) {
 			let cart: Object[] = JSON.parse(localStorage.getItem('cart') || '[]');
+
 			const existingProduct: any = cart.find((item: any) => item.Product.ProductId === this.product?.ProductId);
 
 			if (!existingProduct) {
@@ -48,17 +49,16 @@ export class ProductComponent implements OnInit {
 					Quantity: +quantity.value,
 				};
 				cart.push(pedido);
-			} else {
-				console.log(existingProduct);
-
-				existingProduct.Quantity = +quantity.value;
-			}
+			} else existingProduct.Quantity = +quantity.value;
 
 			localStorage.setItem('cart', JSON.stringify(cart));
 			quantity.value = '';
 			this.alert();
+		} else {
+			Swal.fire('Cantidad Erronea', 'El campo no puede estar vacio - Y no debe ser mayor al stock', 'warning');
 		}
 	}
+
 	alert() {
 		Swal.fire({
 			title: 'Producto Agregado Correctamente',

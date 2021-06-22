@@ -6,8 +6,8 @@
             <button class="btn btn-outline-danger ms-3" (click)="signOff()">Cerrar Sesion</button>
         </div>
         <div *ngIf="!client" class="tabs">
-            <button class="btn" [class.btn-outline-danger]="showForm" (click)="onShowForm(true)">Iniciar Sesion</button>
-            <button class="btn" [class.btn-outline-danger]="!showForm" (click)="onShowForm(false)">Crear Cuenta</button>
+            <button class="btn" [class.btn-outline-danger]="!showForm" (click)="onShowForm(false)">Iniciar Sesion</button>
+            <button class="btn" [class.btn-outline-danger]="showForm" (click)="onShowForm(true)">Crear Cuenta</button>
         </div>
     </div>
 </div>
